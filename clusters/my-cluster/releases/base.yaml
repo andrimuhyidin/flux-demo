@@ -1,7 +1,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: HelmRepository
 metadata:
-  name: 99group
+  name: base
   namespace: demo
 spec:
   url: urbanindo.github.io/99-charts
@@ -20,7 +20,7 @@ spec:
       version: '0.1.0'
       sourceRef:
         kind: HelmRepository
-        name: 99group
+        name: base
         namespace: demo
       interval: 1m
   values:
