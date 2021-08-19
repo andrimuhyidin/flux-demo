@@ -12,3 +12,8 @@ spec:
         name: 99group
       version: 0.1.0
   interval: 1m0s
+  values:
+    resources:
+      requests:
+        cpu: 80m
+        memory: 64Mi
