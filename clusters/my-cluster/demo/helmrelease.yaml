@@ -6,7 +6,7 @@ metadata:
 spec:
   chart:
     spec:
-      chart: demo
+      chart: base
       sourceRef:
         kind: HelmRepository
         name: 99group
