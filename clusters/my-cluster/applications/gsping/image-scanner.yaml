@@ -1,0 +1,55 @@
+# Image Registry
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImageRepository
+metadata:
+  name: harpropnas-demo
+  namespace: demo
+spec:
+  image: andrimuhyidin/gsping
+  interval: 1m0s
+  # secretRef:
+  #   name: reg-secret-name
+
+# Image Policy
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: harpropnas-demo
+  namespace: demo
+spec:
+  filterTags:
+    pattern: '^alpha-[a-fA-F0-9]+-(?P<ts>.*)'
+    extract: '$ts'
+  imageRepositoryRef:
+    name: harpropnas-demo
+  policy:
+    numerical:
+      order: asc
+
+# Image Automation Updates
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImageUpdateAutomation
+metadata:
+  name: gsping-demo
+  namespace: demo
+spec:
+  interval: 1m0s
+  sourceRef:
+    kind: GitRepository
+    name: flux-demo
+  git:
+    checkout:
+      ref:
+        branch: master
+    commit:
+      author:
+        email: fluxcdbot@users.noreply.github.com
+        name: fluxcdbot
+      messageTemplate: '{{range .Updated.Images}}{{println .}}{{end}}'
+    push:
+      branch: master
+  update:
+    path: ./clusters/my-cluster/gsping
+    strategy: Setters
