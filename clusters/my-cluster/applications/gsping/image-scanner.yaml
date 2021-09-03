@@ -14,6 +14,7 @@ spec:
   #   name: secret-name
 
 # Image Repository
+---
 apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImageRepository
 metadata:
