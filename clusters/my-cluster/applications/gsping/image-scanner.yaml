@@ -2,7 +2,7 @@
 apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImageRepository
 metadata:
-  name: harpropnas-demo
+  name: gsping-demo
   namespace: demo
 spec:
   image: andrimuhyidin/gsping
@@ -15,14 +15,14 @@ spec:
 apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImagePolicy
 metadata:
-  name: harpropnas-demo
+  name: gsping-demo
   namespace: demo
 spec:
   filterTags:
     pattern: '^alpha-[a-fA-F0-9]+-(?P<ts>.*)'
     extract: '$ts'
   imageRepositoryRef:
-    name: harpropnas-demo
+    name: gsping-demo
   policy:
     numerical:
       order: asc
