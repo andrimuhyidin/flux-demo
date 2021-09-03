@@ -5,7 +5,7 @@ metadata:
   name: gsping-demo
   namespace: demo
 spec:
-  interval: 5m
+  interval: 1m0s
   timeout: 20s
   url: https://github.com/andrimuhyidin/flux-demo
   ref:
