@@ -41,8 +41,8 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  srcPort: 80
-  dstPort: 80
+  srcPort: 8080
+  dstPort: 8080
 
 virtualService:
   enabled: false
