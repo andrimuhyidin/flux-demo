@@ -1,4 +1,19 @@
-# Image Registry
+# Git Repository
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: GitRepository
+metadata:
+  name: gsping-demo
+  namespace: demo
+spec:
+  interval: 5m
+  timeout: 20s
+  url: https://github.com/andrimuhyidin/flux-demo
+  ref:
+    branch: master
+  # secretRef:
+  #   name: secret-name
+
+# Image Repository
 apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImageRepository
 metadata:
