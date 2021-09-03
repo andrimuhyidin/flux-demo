@@ -5,8 +5,15 @@ bases:
   - ../../base/
 resources:
   - helm-release.yaml
+  - image-scanner.yaml
   - namespace.yaml
 configMapGenerator:
   - name: values-demo
     files:
       - values.yaml=values-demo.yaml
+generatorOptions:
+  disableNameSuffixHash: true
+  labels:
+    type: generated
+  annotations:
+    note: generated

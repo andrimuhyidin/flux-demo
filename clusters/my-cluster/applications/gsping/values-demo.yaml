@@ -8,8 +8,8 @@ nameOverride: ""
 fullnameOverride: ""
 
 image:
-  repository: andrimuhyidin/gsping # {"$imagepolicy": "demo:harpropnas-demo:name"}
-  tag: alpha-1.0.0 # {"$imagepolicy": "demo:harpropnas-demo:tag"}
+  repository: andrimuhyidin/gsping # {"$imagepolicy": "demo:gsping-demo:name"}
+  tag: alpha-1.0.0 # {"$imagepolicy": "demo:gsping-demo:tag"}
   pullPolicy: IfNotPresent
 
 imagePullSecrets:
@@ -45,10 +45,10 @@ service:
   dstPort: 80
 
 virtualService:
-  enabled: true
+  enabled: false
 
 destinationRule:
-  enabled: true
+  enabled: false
 
 ingress:
   enabled: false
@@ -79,7 +79,7 @@ resources:
     memory: 256Mi
 
 autoscaling:
-  enabled: true
+  enabled: false
   minReplicas: 1
   maxReplicas: 10
   QPStarget: 7
