@@ -9,7 +9,7 @@ fullnameOverride: ""
 
 image:
   repository: andrimuhyidin/gsping # {"$imagepolicy": "demo:gsping-demo:name"}
-  tag: alpha-1.0.0 # {"$imagepolicy": "demo:gsping-demo:tag"}
+  tag: alpha-a3e2e7dc05cf17a6096d463bb86a131e444f5135 # {"$imagepolicy": "demo:gsping-demo:tag"}
   pullPolicy: IfNotPresent
 
 imagePullSecrets:
