@@ -4,3 +4,4 @@ metadata:
   name: demo
   labels:
     name: demo
+    # istio-injection: false
