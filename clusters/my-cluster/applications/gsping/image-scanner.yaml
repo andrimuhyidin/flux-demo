@@ -67,5 +67,5 @@ spec:
     push:
       branch: master
   update:
-    path: ./clusters/my-cluster/gsping
+    path: ./clusters/my-cluster/applications/gsping
     strategy: Setters
