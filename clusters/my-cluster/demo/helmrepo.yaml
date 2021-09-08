@@ -1,8 +1,0 @@
-apiVersion: source.toolkit.fluxcd.io/v1beta1
-kind: HelmRepository
-metadata:
-  name: 99group
-  namespace: demo
-spec:
-  interval: 1m0s
-  url: https://urbanindo.github.io/99-charts
