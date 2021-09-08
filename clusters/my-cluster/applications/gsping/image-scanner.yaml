@@ -54,7 +54,7 @@ spec:
   interval: 1m0s
   sourceRef:
     kind: GitRepository
-    name: flux-demo
+    name: gsping-demo
   git:
     checkout:
       ref:
